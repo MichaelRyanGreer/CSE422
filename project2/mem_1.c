@@ -24,6 +24,8 @@ int Mem_Init(int size) {
 	header = (header << 1) & ~(size_t(1));
 
 	*((size_t*)heap_base) = header;
+	*((size_t*)heap_max) = header;
+	
 }
 
 void * Mem_Alloc(int size, int policy) {
